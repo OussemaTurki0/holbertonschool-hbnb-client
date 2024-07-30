@@ -2,34 +2,311 @@
 <html lang="en">
 
 <head>
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>HBNB</title>
-
-
 </head>
+<!------------------------------------------------------------------------->
+
 <body>
-    <div class="header">
+    <header class="header">
         <img src="photos/logo.png" alt="HBnB Logo">
-        <div class="header-links">
+        <nav class="header-links">
             <a href="#">Home</a>
-            <a href="#">Our Shop</a>
+            <a href="#">Web</a>
             <a href="#">Contact</a>
             <button>Login</button>
+        </nav>
+    </header>
+<!------------------------------------------------------------------------->
+
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-item">
+                <img src="photos/type1.jpeg" alt="Pool" class="navbar-icon">
+                <p class="navbar-text">Pool</p>
+            </div>
+            <div class="navbar-item">
+                <img src="photos/type2.jpeg" alt="Gym" class="navbar-icon">
+                <p class="navbar-text">Activities</p>
+            </div>
+            <div class="navbar-item">
+                <img src="photos/type3.jpeg" alt="Village" class="navbar-icon">
+                <p class="navbar-text">Historical Homes</p>
+            </div>
+            <div class="navbar-item">
+                <img src="photos/type4.jpeg" alt="Mountain" class="navbar-icon">
+                <p class="navbar-text">Mountain</p>
+            </div>
+            <div class="navbar-item">
+                <img src="photos/type5.jpeg" alt="Surfing" class="navbar-icon">
+                <p class="navbar-text">Surfing</p>
+            </div>
+            <div class="navbar-item">
+                <img src="photos/type6.jpeg" alt="Beach" class="navbar-icon">
+                <p class="navbar-text">Village</p>
+            </div>
+            <div class="navbar-item">
+                <img src="photos/type7.jpeg" alt="SeaView" class="navbar-icon">
+                <p class="navbar-text">SeaView</p>
+            </div>
+            <div class="navbar-item">
+                <img src="photos/type8.jpeg" alt="Coozy" class="navbar-icon">
+                <p class="navbar-text">Coozy</p>
+            </div>
+            <div class="navbar-item">
+                <img src="photos/type9.jpeg" alt="BeachFront" class="navbar-icon">
+                <p class="navbar-text">BeachFront</p>
+            </div>
+            <div class="navbar-item">
+                <img src="photos/type1.jpeg" alt="Vip" class="navbar-icon">
+                <p class="navbar-text">VIP</p>
+            </div>
         </div>
-    </div>
+    </nav>
+<!------------------------------------------------------------------------->
 
-    <div class="Available">
+    <section class="available">
         <h2>Available Places</h2>
+        <div class="filter">
+            <label for="country-select">Filter by country:</label>
+            <select id="country-select">
+                <option value="all">All</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="tunisia">Tunisia</option>
+                <option value="portugal">Portugal</option>
+                <option value="switzerland">Switzerland</option>
+                <option value="indonesia">Indonesia</option>
+                <option value="netherlands">Netherlands</option>
+                <option value="japan">Japan</option>
+                <option value="italy">Italy</option>
+                <option value="thailand">Thailand</option>
+                <option value="austria">Austria</option>
+                <option value="brazil">Brazil</option>
+                <option value="denmark">Denmark</option>
+                <option value="france">France</option>
+                <option value="spain">Spain</option>
+                <option value="greece">Greece</option</option>
+            </select>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const select = document.getElementById('country-select');
+                    const cards = document.querySelectorAll('.apartment-card');
+        
+                    select.addEventListener('change', () => {
+                        const selectedCountry = select.value;
+        
+                        cards.forEach(card => {
+                            if (selectedCountry === 'all' || card.getAttribute('data-country') === selectedCountry) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            </script>
+        </div>
+        
+    </section>
+<!------------------------------------------------------------------------->
 
-    </div>
+    <main class="container">
+        <div class="apartment-card" data-country="usa">
+            <h3>Beautiful Beach House</h3>
+            <p>Price per night: $150</p>
+            <p>Location: Los Angeles, United States</p>
+            <a href="details.html">
+                <button>View Details</button>
+            </a>
+        </div>
+        <div class="apartment-card" data-country="canada">
+            <h3>Cozy Cabin</h3>
+            <p>Price per night: $100</p>
+            <p>Location: Toronto, Canada</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="usa">
+            <h3>Modern Apartment</h3>
+            <p>Price per night: $200</p>
+            <p>Location: New York, United States</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="tunisia">
+            <h3>Mountain View</h3>
+            <p>Price per night: $200</p>
+            <p>Location: Hammamet, Tunisia</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="italy">
+            <h3>Historical House</h3>
+            <p>Price per night: $200</p>
+            <p>Location: Rome, Italy</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="usa">
+            <h3>Play House</h3>
+            <p>Price per night: $200</p>
+            <p>Location: Mexico, USA</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="france">
+            <h3>Luxury Penthouse</h3>
+            <p>Price per night: $500</p>
+            <p>Location: Paris, France</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="spain">
+            <h3>Charming Studio</h3>
+            <p>Price per night: $120</p>
+            <p>Location: Barcelona, Spain</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="greece">
+            <h3>Seaside Villa</h3>
+            <p>Price per night: $350</p>
+            <p>Location: Santorini, Greece</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="germany">
+            <h3>Urban Loft</h3>
+            <p>Price per night: $180</p>
+            <p>Location: Berlin, Germany</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="scotland">
+            <h3>Rustic Barn</h3>
+            <p>Price per night: $140</p>
+            <p>Location: Edinburgh, Scotland</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="japan">
+            <h3>City Center Suite</h3>
+            <p>Price per night: $250</p>
+            <p>Location: Tokyo, Japan</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="italy">
+            <h3>Countryside Retreat</h3>
+            <p>Price per night: $160</p>
+            <p>Location: Tuscany, Italy</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="usa">
+            <h3>Oceanfront Condo</h3>
+            <p>Price per night: $400</p>
+            <p>Location: Miami, USA</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="usa">
+            <h3>Mountain Lodge</h3>
+            <p>Price per night: $220</p>
+            <p>Location: Aspen, USA</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="uae">
+            <h3>Modern Studio</h3>
+            <p>Price per night: $130</p>
+            <p>Location: Sydney, Australia</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="uae">
+            <h3>Desert Oasis</h3>
+            <p>Price per night: $170</p>
+            <p>Location: Dubai, UAE</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="austria">
+            <h3>Historical Mansion</h3>
+            <p>Price per night: $350</p>
+            <p>Location: Vienna, Austria</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="portugal">
+            <h3>Sunny Loft</h3>
+            <p>Price per night: $190</p>
+            <p>Location: Lisbon, Portugal</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="switzerland">
+            <h3>Luxury Chalet</h3>
+            <p>Price per night: $280</p>
+            <p>Location: Zurich, Switzerland</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="indonesia">
+            <h3>Cozy Beach Cabin</h3>
+            <p>Price per night: $160</p>
+            <p>Location: Bali, Indonesia</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="netherlands">
+            <h3>Elegant Manor</h3>
+            <p>Price per night: $300</p>
+            <p>Location: Amsterdam, Netherlands</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="usa">
+            <h3>Modern Penthouse</h3>
+            <p>Price per night: $450</p>
+            <p>Location: New York City, USA</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="japan">
+            <h3>Quiet Retreat</h3>
+            <p>Price per night: $140</p>
+            <p>Location: Kyoto, Japan</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="italy">
+            <h3>Chic Studio</h3>
+            <p>Price per night: $210</p>
+            <p>Location: Milan, Italy</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="thailand">
+            <h3>Spacious Villa</h3>
+            <p>Price per night: $370</p>
+            <p>Location: Phuket, Thailand</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="austria">
+            <h3>Mountain Hideaway</h3>
+            <p>Price per night: $230</p>
+            <p>Location: Innsbruck, Austria</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="canada">
+            <h3>City Loft</h3>
+            <p>Price per night: $200</p>
+            <p>Location: Toronto, Canada</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="brazil">
+            <h3>Beachside Retreat</h3>
+            <p>Price per night: $260</p>
+            <p>Location: Rio de Janeiro, Brazil</p>
+            <button>View Details</button>
+        </div>
+        <div class="apartment-card" data-country="denmark">
+            <h3>Trendy Flat</h3>
+            <p>Price per night: $170</p>
+            <p>Location: Copenhagen, Denmark</p>
+            <button>View Details</button>
+        </div>
+        
+        
+    </main>
+<!------------------------------------------------------------------------->
+
+    <footer>
+        <p>© Copyright 2024 HBNB Evolution | Created by Oussema Turki</p>
+    </footer>
 </body>
 
 </html>
