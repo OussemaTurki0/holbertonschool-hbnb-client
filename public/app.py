@@ -14,11 +14,11 @@ jwt = JWTManager(app)
 
 # Load data
 try:
-    with open(os.path.join(BASE_DIR, 'data/users.json')) as f:
+    with open(os.path.join(BASE_DIR, 'users.json')) as f:
         users = json.load(f)
-    with open(os.path.join(BASE_DIR, 'data/places.json')) as f:
+    with open(os.path.join(BASE_DIR, 'places.json')) as f:
         places = json.load(f)
-    with open(os.path.join(BASE_DIR, 'data/countries.json')) as f:
+    with open(os.path.join(BASE_DIR, 'countries.json')) as f:
         countries = json.load(f)
 except FileNotFoundError as e:
     print(f"Error: {e}")
