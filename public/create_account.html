@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>HBNB Login</title>
+    <title>HBNB Create Account</title>
 </head>
 <body>
     <header class="header">
@@ -24,18 +24,23 @@
         </div>
     </header>
     <main>
-        <section class="login-menu" id="login-menu-section">
+        <section class="create-account-menu" id="create-account-menu-section">
             <img src="photos/logosmall.png" alt="HBnB Logo">
+            <p><strong>Create a Hbnb account</strong></p>
+            <p>Access all that Hbnb has to offer with a single account. All fields are required.</p>
 
-            <h1>Sign in</h1>
-            <form id="login-form">
-                <label for="email">Email:</label>
+            <form id="create-account-form">
+                <p><strong>UserName:</strong></p>
+                <input type="text" id="name" name="name" required>
+                <p><strong>Email:</strong></p>
                 <input type="email" id="email" name="email" required>
-                <label for="password">Password:</label>
+                <p><strong>Password:</strong></p>
                 <input type="password" id="password" name="password" required>
-                <a href="forgot_password.html">Forgot your password?</a>
-                <a href="create_account.html">Create a account</a>
-                <button type="submit">login</button>
+                <p><strong>Confirm Password:</strong></p>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <button type="submit">Create Account</button>
+                <label class="small-text">By continuing, you agree to our Terms and Privacy Policy.</label>
+                <a href="login.html">Already have an account? Sign in</a>
             </form>
         </section>
     </main>

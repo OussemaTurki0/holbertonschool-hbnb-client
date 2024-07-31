@@ -33,6 +33,7 @@
             <p><strong>Location:</strong> Los Angeles, United States</p>
             <p><strong>Description:</strong> A Beautiful Beach House with amazing views</p>
             <p><strong>Amenities:</strong> Wifi, Pool, Air Conditioning</p>
+            <p><img src="photos/icon_wifi.png" alt="Wifi"><img src="photos/icon_bed.png" alt="Bed"><img src="photos/icon_bath.png" alt="Bath"></p>
         </div>
     </main>
     <main class="container3">
@@ -49,7 +50,7 @@
         </div>
         <main class="container4">
             <h2 id="review-form">Add a Review</h2>
-            <form id="review-form" class="review-form">
+            <form id="review-form" class="review-form" onsubmit="handleSubmit(event)">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="review">Your Review:</label>
@@ -69,6 +70,12 @@
     <footer>
         <p>© 2024 HBnB Evolution. All rights reserved.</p>
     </footer>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            window.location.href = 'submit.html'; // Redirect to submit.html
+        }
+    </script>
     <script src="scripts.js"></script>
 </body>
 

@@ -164,6 +164,7 @@ footer {
   padding: 20px;
   max-width: 600px;
   margin: 0 auto;
+  box-sizing: border-box; /* Ensures padding is included in the width calculation */
 }
 
 .containerBeachHouse,
@@ -195,7 +196,8 @@ footer {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
+  padding: 40px;
+  padding-left: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -248,7 +250,8 @@ main {
 
 }
 
-.login-menu {
+.login-menu,
+.create-account-menu {
   background-color: white;
   padding: 80px;
   border: 1px solid #ddd;
@@ -258,24 +261,30 @@ main {
   margin: 0 auto;
 }
 
-.login-menu h1 {
+.login-menu h1,
+.create-account-menu h1 {
   margin-bottom: 20px;
 }
 
-.login-menu form {
+.login-menu form,
+.create-account-menu form {
   display: flex;
   flex-direction: column;
 }
 
 .login-menu label,
 .login-menu input,
-.login-menu button {
+.login-menu button,
+.create-account-menu label,
+.create-account-menu input,
+.create-account-menu button {
   margin-bottom: 15px;
   width: 100%;
   box-sizing: border-box;
 }
 
-.login-menu button {
+.login-menu button,
+.create-account-menu button {
   background-color: #FFA500;
   color: white;
   border: none;
@@ -285,8 +294,12 @@ main {
   transition: background-color 0.3s;
 }
 
-.login-menu button:hover {
+.login-menu button:hover,
+.create-account-menu button:hover {
   background-color: #ff8800;
 }
 
-
+.small-text {
+  font-size: 0.8em; /* Adjust the size as needed */
+  color: #555; /* Optional: Change the color to a lighter shade */
+}
