@@ -1,7 +1,10 @@
+import os
+import json
 from flask import Flask, request, jsonify
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from flask_cors import CORS
-import json
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(__name__)
 CORS(app)
@@ -10,14 +13,16 @@ app.config.from_object('config.Config')
 jwt = JWTManager(app)
 
 # Load data
-with open('data/users.json') as f:
-    users = json.load(f)
-
-with open('data/places.json') as f:
-    places = json.load(f)
-
-with open('data/countries.json') as f:
-    countries = json.load(f)
+try:
+    with open(os.path.join(BASE_DIR, 'data/users.json')) as f:
+        users = json.load(f)
+    with open(os.path.join(BASE_DIR, 'data/places.json')) as f:
+        places = json.load(f)
+    with open(os.path.join(BASE_DIR, 'data/countries.json')) as f:
+        countries = json.load(f)
+except FileNotFoundError as e:
+    print(f"Error: {e}")
+    exit(1)
 
 new_reviews = []
 

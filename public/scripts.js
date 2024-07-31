@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('password').value;
 
             try {
-                const response = await fetch('http://127.0.0.1:5500/login', {
+                const response = await fetch('http://127.0.0.1:5000/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -129,13 +129,19 @@ async function populateCountrySelect() {
 }
 
 // Filter places by selected country
-function filterPlacesByCountry(countryCode) {
-    console.log('Filtering by country code:', countryCode); // Debug log
-    const placeCards = document.querySelectorAll('.place-card');
+document.addEventListener('DOMContentLoaded', () => {
+	const select = document.getElementById('country-select');
+	const cards = document.querySelectorAll('.apartment-card');
 
-    placeCards.forEach(card => {
-        const cardCountryCode = card.dataset.country; // Retrieve country code from data attribute
-        console.log('Card country code:', cardCountryCode); // Debug log
-        card.style.display = cardCountryCode === countryCode || countryCode === '' ? 'block' : 'none';
-    });
-}
+	select.addEventListener('change', () => {
+		const selectedCountry = select.value;
+
+		cards.forEach(card => {
+			if (selectedCountry === 'all' || card.getAttribute('data-country') === selectedCountry) {
+				card.style.display = 'block';
+			} else {
+				card.style.display = 'none';
+			}
+		});
+	});
+});

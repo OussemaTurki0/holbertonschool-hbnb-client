@@ -48,24 +48,6 @@
                     <option value="greece">Greece</option>
                 </select>
             </div>
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    const select = document.getElementById('country-select');
-                    const cards = document.querySelectorAll('.apartment-card');
-
-                    select.addEventListener('change', () => {
-                        const selectedCountry = select.value;
-
-                        cards.forEach(card => {
-                            if (selectedCountry === 'all' || card.getAttribute('data-country') === selectedCountry) {
-                                card.style.display = 'block';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        });
-                    });
-                });
-            </script>
         </section>
         <div class="container">
             <div class="apartment-card" data-country="usa">
