@@ -1,0 +1,21 @@
+[
+    {
+        "id": "place1",
+        "host_id": 1,
+        "host_name": "John Doe",
+        "description": "A beautiful place",
+        "price_per_night": 100,
+        "city_id": "city1",
+        "city_name": "CityName",
+        "country_code": "US",
+        "country_name": "United States",
+        "number_of_rooms": 3,
+        "number_of_bathrooms": 2,
+        "max_guests": 5,
+        "latitude": 37.7749,
+        "longitude": -122.4194,
+        "amenities": ["Wi-Fi", "Air Conditioning"],
+        "reviews": []
+    }
+
+]
